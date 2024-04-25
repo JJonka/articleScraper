@@ -1,0 +1,65 @@
+@page {
+  size: 21cm 29.7cm;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: rgba(128, 128, 128, 0.233);
+}
+
+.root {
+  width: 21cm;
+  height: 29.7cm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5mm auto;
+  background-color: white;
+  box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3);
+}
+
+.sheet {
+  width: 90%;
+  height: 90%;
+  column-count: 3;
+  column-fill: auto;
+  box-sizing: border-box;
+  page-break-after: always;
+  margin: 5mm auto;
+  text-align: justify;
+}
+
+.date {
+  text-align: right;
+  font-size: 9px;
+  width: 90%;
+}
+
+.newspaper {
+  text-align: center;
+  width: 100%;
+  border-bottom: 0.5px solid black;
+  font-size: 8px;
+}
+
+.articleAuthor {
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+}
+
+h5 {
+  margin: 10px 0px;
+}
+[class^="para"] {
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
