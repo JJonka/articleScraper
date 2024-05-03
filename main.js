@@ -1,11 +1,11 @@
 import axios from "axios";
-import cheerio from "cheerio";
+import { load } from "cheerio";
 import fs from "fs";
 
 async function scrapeSite() {
-  const url = `https://www.polityka.pl/tygodnikpolityka/swiat/2252691,1,prawie-caly-swiat-poparl-izrael-i-potepil-iran-ale-sa-rysy-czy-europa-nie-jest-zbyt-leniwa.read`;
+  const url = `https://www.polityka.pl/tygodnikpolityka/kraj/2254393,1,sikorski-wyznacza-cele-gdy-sytuacja-na-swiecie-jest-grozna-reakcja-dudy-nie-miesci-sie-w-glowie.read?src=mt`;
   const { data } = await axios.get(url);
-  const $ = cheerio.load(data);
+  const $ = load(data);
 
   let results = {};
   $("div.cg_article_title").each((i, elem) => {
@@ -26,9 +26,7 @@ async function scrapeSite() {
     $(elem)
       .find("h2, p")
       .each((i, elem) => {
-        if (elem.name == "h2") {
-          paragraphs.push({ paraTitle: $(elem).text() });
-        } else if (elem.name == "p") {
+        if (elem.name == "p") {
           if (!$(elem).text().includes("Czytaj też")) {
             paragraphs.push({ para: $(elem).text() });
           }

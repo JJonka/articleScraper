@@ -2,6 +2,11 @@
   size: 21cm 29.7cm;
 }
 
+@font-face {
+  font-family: "Sabon";
+  src: url(EdmundsburySerif.ttf);
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -41,11 +46,16 @@ body {
   width: 90%;
 }
 
+.articleTitle {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 .newspaper {
   text-align: center;
   width: 100%;
   border-bottom: 0.5px solid black;
   font-size: 8px;
+  font-family: Verdana, sans-serif;
 }
 
 .articleAuthor {
@@ -54,11 +64,16 @@ body {
   font-size: 10px;
 }
 
+.shortEntry {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 h5 {
   margin: 10px 0px;
 }
 [class^="para"] {
   font-size: 11px;
+  font-family: "Sabon";
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
